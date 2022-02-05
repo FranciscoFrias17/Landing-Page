@@ -46,11 +46,12 @@ function NavBar() {
         const li = document.createElement('li');
         const anchor = document.createElement('a')
         const sectionName = section[i].getAttribute('data-nav');
+        anchor.setAttribute('href',`#${sectionName}`);
         anchor.innerText = sectionName;
         li.appendChild(anchor);
             document.getElementById('navbar__list').appendChild(li);
-    }
-}
+        }
+    };
 
 NavBar()
 
@@ -59,6 +60,7 @@ NavBar()
 
 
 // Scroll to anchor ID using scrollTO event
+
 
 
 /**
