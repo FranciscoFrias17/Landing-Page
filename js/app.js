@@ -31,7 +31,16 @@ const section = document.querySelectorAll('section');
  * 
 */
 
-
+let activeView = function (elem) {
+    let sectionViewport = elem.getBoundingClientRect();
+        if (sectionViewport.top>= 0 && sectionViewport.left>=0 && sectionViewport.right
+        <=(window.innerWidth || document.documentElement.clientWidth) && sectionViewport.bottom
+        <=(window.innerHeight || document.documentElement.clientHeight) === true) {
+            return true; 
+        } else {
+            return false;
+        }
+};
 
 /**
  * End Helper Functions
@@ -61,10 +70,12 @@ NavBar()
 
 window.addEventListener('scroll', function() {
     section.forEach(element => {
-        if (element.getBoundingClientRect()) {
+        if (activeView(element)) {
             element.classList.add('your-active-class');
+        } else {
+            element.classList.remove('your-active-class');
         }
-    })
+    }) 
 })
 
 // Scroll to anchor ID using scrollTO event
