@@ -24,13 +24,13 @@
 */
 
 const section = document.querySelectorAll('section');
-const sectionLink = '';
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+
 
 
 /**
@@ -59,36 +59,13 @@ NavBar()
 
 // Add class 'active' to section when near top of viewport
 
-const ActiveSection = document.getElementsByClassName('your-active-class');
-
-NavSection0.addEventListener('click', function() {
-    //Removes your active class from all sections
-    section.classList.remove('your-active-class');
-    // Adds active class to current section clicked on Nav Bar
-    section1.classList.add('your-active-class');
-});
-
-NavSection1.addEventListener('click', function() {
-    //Removes your active class from all sections
-    section.classList.remove('your-active-class');
-    // Adds active class to current section clicked on Nav Bar
-    section2.classList.add('your-active-class');
-});
-
-NavSection2.addEventListener('click', function() {
-    //Removes your active class from all sections
-    section.classList.remove('your-active-class');
-    // Adds active class to current section clicked on Nav Bar
-    section3.classList.add('your-active-class');
-});
-
-NavSection3.addEventListener('click', function() {
-    //Removes your active class from all sections
-    section.classList.remove('your-active-class');
-    // Adds active class to current section clicked on Nav Bar
-    section4.classList.add('your-active-class');
-});
-
+window.addEventListener('scroll', function() {
+    section.forEach(element => {
+        if (element.getBoundingClientRect()) {
+            element.classList.add('your-active-class');
+        }
+    })
+})
 
 // Scroll to anchor ID using scrollTO event
 
