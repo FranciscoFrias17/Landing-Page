@@ -57,7 +57,7 @@ function NavBar() {
         const sectionName = section[i].getAttribute('data-nav');
         const sectionLink = section[i].getAttribute('id', 'section1');
         anchor.setAttribute('href',`#${sectionLink}`);
-        anchor.setAttribute('id', 'NavSection'+i);
+        anchor.setAttribute('id', 'navSection'+i);
         anchor.innerText = sectionName;
         li.appendChild(anchor);
             document.getElementById('navbar__list').appendChild(li);
@@ -80,6 +80,27 @@ window.addEventListener('scroll', function() {
 
 // Scroll to anchor ID using scrollTO event
 
+navSection0.addEventListener('click', function() {
+    event.preventDefault()
+    section1.scrollIntoView({behavior: 'smooth'});
+});
+
+
+navSection1.addEventListener('click', function() {
+    event.preventDefault()
+    section2.scrollIntoView({behavior: 'smooth'});
+});
+
+
+navSection2.addEventListener('click', function() {
+    event.preventDefault()
+    section3.scrollIntoView({behavior: 'smooth'});
+});
+
+navSection3.addEventListener('click', function() {
+    event.preventDefault()
+    section4.scrollIntoView({behavior: 'smooth'});
+});
 
 
 /**
