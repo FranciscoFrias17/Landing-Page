@@ -25,6 +25,7 @@
 
 const section = document.querySelectorAll('section');
 
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -76,30 +77,54 @@ window.addEventListener('scroll', function() {
             element.classList.remove('your-active-class');
         }
     }) 
-})
+});
 
 // Scroll to anchor ID using scrollTO event
 
+const navMenu = document.querySelectorAll('a');
+
 navSection0.addEventListener('click', function() {
     event.preventDefault()
+    navMenu.forEach(element => {
+        if (element.classList.contains('menu__link')) {
+          element.classList.remove('menu__link');
+        }
+    });
     section1.scrollIntoView({behavior: 'smooth'});
+    navSection0.classList.add('menu__link');
 });
-
 
 navSection1.addEventListener('click', function() {
     event.preventDefault()
+    navMenu.forEach(element => {
+        if (element.classList.contains('menu__link')) {
+          element.classList.remove('menu__link');
+        }
+    });
     section2.scrollIntoView({behavior: 'smooth'});
+    navSection1.classList.add('menu__link');
 });
-
 
 navSection2.addEventListener('click', function() {
     event.preventDefault()
+    navMenu.forEach(element => {
+        if (element.classList.contains('menu__link')) {
+          element.classList.remove('menu__link');
+        }
+    });
     section3.scrollIntoView({behavior: 'smooth'});
+    navSection2.classList.add('menu__link');
 });
 
 navSection3.addEventListener('click', function() {
     event.preventDefault()
+    navMenu.forEach(element => {
+        if (element.classList.contains('menu__link')) {
+          element.classList.remove('menu__link');
+        }
+    });
     section4.scrollIntoView({behavior: 'smooth'});
+    navSection3.classList.add('menu__link');
 });
 
 
